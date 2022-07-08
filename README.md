@@ -1,46 +1,82 @@
-# Getting Started with Create React App
+# React Hooks!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Getting started
 
-## Available Scripts
+```
+git clone (the url of the repo)
+cd (into the directory of the repo)
+yarn OR npm install (to install the dependencies)
+yarn start OR npm run start (to start the HackJam)
 
-In the project directory, you can run:
+```
 
-### `npm start`
+### Explanations before starting
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+When you run the exercises, you have each exercise with it's solution.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+You can always look at the rendered solution to see if your's match.
 
-### `npm test`
+To find the right files that you need to work on, you can open the `src/` folder, and each exercise is in it's directory
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To switch between exercises, simply click on the sidebar the exercise that you want to work on
 
-### `npm run build`
+The goal is to code all the exercises without using classes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Happy Hacking!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### 1. useState
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This exercise is a simple counter. Implement the counter using React Hooks.
 
-### `npm run eject`
+`hint: useState is a hook that allows you to have a state in a functional component`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### 2. useReducer
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Now let's spice up a bit the things, what if you need to have multiple states? You could do it with multiple `useState`
+But there is another reducer that handles more effectively complex object states
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### 3. useRef
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+If you don't know what are refs in react: https://reactjs.org/docs/refs-and-the-dom.html
 
-## Learn More
+Basically refs provides a way to access dom nodes from your React code (not only dom nodes)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Find a way to have a ref in a function component!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The goal is that when you click on the button, you need to put the focus on the input field
+
+#### 4. useEffect 1
+
+There is a hook that is used when you need to perform side effects, such as modifying the title of the tab
+
+Try to modify the title of the tab when you type in the input field
+
+`hint: to change the title of the tab you can do: document.title = "Hackages coaching"`
+
+#### 5. useEffect 2
+
+useEffect can be used for any side effect!
+
+Now the goal is to show on the page the number of seconds the user has spent on the page
+
+`hint: you can create your own hook and use an interval`
+
+#### 6. United Reducer
+
+Comment her 
+
+#### 7. useContext
+
+The hook useContext is used to be able to access the context from a function component without having to play with render props
+
+Look at the solution and try to implement it yourself!
+
+#### 8. useLayoutEffect
+
+Use the useLayoutEffect Hook to lock the scroll when a modal is opened!
+
+#### 9. useCallback
+
+When you click on the button, the Button component rerenders. Try to avoid that unecessary rerender by using useCallback and React.memo!
+
+But: Never use those 2 by default to fix a React app. Always try to refactor, and in last resort use those 2. Here it is used only to show you that they exists, but perf optimization always comes with a cost.
