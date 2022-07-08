@@ -6,42 +6,31 @@ const DECREMENT = "decrement";
 const INPUT = "INPUT";
 
 export const Exercise2 = () => {
-  const state = {}
-  const dispatch = () => {}
 
   return (
     <Container>
-      <p>playground</p>
-      <p>{state.count}</p>
-      <Button onClick={() => dispatch({type: INCREMENT})}>+</Button>
-      <Button onClick={() => dispatch({type: DECREMENT})}>-</Button>
+      <p>{'state.count'}</p>
+      <Button >+</Button>
+      <Button >-</Button>
       <Label>Text</Label>
       <InputArea
-        value={state.text}
-        onChange={({target: {value}}) => dispatch({type: INPUT, payload: value})}
       />
       Your text is:
-      <pre>
-        {state.text}
-      </pre>
+      <pre>{'state.text'}</pre>
     </Container>
-  )
-}
-
-// type TestState = {
-//   text: string;
-// };
+  );
+};
 
 // const reducer = (
-//   state: TestState = { text: "" },
-//   action: TestState = { text: "" }
-// ): TestState => ({
+//   state: State = { text: "" },
+//   action: State = { text: "" }
+// ): State => ({
 //   ...state,
 //   ...action,
 // });
 
 // const Input1 = () => {
-//   const [state, dispatch] = useReducer<Reducer<TestState, TestState>>(reducer, {
+//   const [state, dispatch] = useReducer<Reducer<State, State>>(reducer, {
 //     text: "",
 //   });
 //   return (
@@ -52,7 +41,7 @@ export const Exercise2 = () => {
 //   );
 // };
 // const Input2 = () => {
-//   const [state, dispatch] = useReducer<Reducer<TestState, TestState>>(reducer, {
+//   const [state, dispatch] = useReducer<Reducer<State, State>>(reducer, {
 //     text: "",
 //   });
 

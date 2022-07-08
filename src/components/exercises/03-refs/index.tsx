@@ -1,6 +1,7 @@
 import React from 'react'
 import {Button, Container, InputArea} from "../../styles";
 
+// https://reactjs.org/docs/hooks-reference.html#usereducer
 
 export const Exercise3  = () => {
 
