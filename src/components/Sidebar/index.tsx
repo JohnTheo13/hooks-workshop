@@ -14,7 +14,7 @@ const routes = [
   },
   {
     link: "/exercise-3",
-    text: "useRef",
+    text: "useReducer more",
   },
   {
     link: "/exercise-4",
@@ -22,7 +22,7 @@ const routes = [
   },
   {
     link: "/exercise-5",
-    text: "useEffect 2",
+    text: "useRef",
   },
   {
     link: "/exercise-6",

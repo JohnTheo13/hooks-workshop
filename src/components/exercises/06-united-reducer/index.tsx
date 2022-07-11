@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "../../styles";
 
-export const Exercise5 = () => {
+export const Exercise6 = () => {
   return (
     <Container>
       <h1>united reducer</h1>

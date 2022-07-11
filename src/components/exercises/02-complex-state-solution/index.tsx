@@ -1,25 +1,26 @@
 import React, { useReducer, Reducer, Dispatch } from "react";
 import { Button, Container, InputArea, Label } from "../../styles";
 
-const INCREMENT = "increment";
-const DECREMENT = "decrement";
-const INPUT = "INPUT";
+export const INCREMENT = "increment";
+export const DECREMENT = "decrement";
+export const INPUT = "INPUT";
 
-type State = {
+export type State = {
   text: string;
   count: number;
 };
 
-type Action = {
+export type Action = {
   type: string;
   payload?: string;
 };
 
-const initialState = {
+export const initialState = {
   count: 0,
   text: "",
 };
-const reducer = (state = initialState, action: Action): State => {
+
+export const onChangeReducer = (state = initialState, action: Action): State => {
   switch (action.type) {
     case INCREMENT:
       return { ...state, count: state.count + 1 };
@@ -32,8 +33,14 @@ const reducer = (state = initialState, action: Action): State => {
   }
 };
 
-export const Exercise2 = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+const init = (num: number) => ({
+  ...initialState,
+  count: num,
+  list: []
+})
+
+export const Exercise2 = ({ initial = 0 }) => {
+  const [state, dispatch] = useReducer(onChangeReducer, initialState, () => init(initial));
 
   return (
     <Container>
