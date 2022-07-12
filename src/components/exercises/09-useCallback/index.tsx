@@ -3,9 +3,9 @@ import { Container, Button } from "../../styles";
 
 export const Exercise9 = () => {
   const [count, setCount] = useState(0);
-  const inc = useCallback(() => {
+  const inc = () => {
     setCount((c) => c + 1);
-  }, [setCount]);
+  };
 
   return (
     <Container>
@@ -15,11 +15,11 @@ export const Exercise9 = () => {
   );
 };
 
-const ChildComponent = memo(({ inc }: { inc: () => void }) => {
+const ChildComponent = ({ inc }: { inc: () => void }) => {
   console.log("The Button component has rerended");
   return (
     <div>
       <Button onClick={inc}>+</Button>
     </div>
   );
-});
+};

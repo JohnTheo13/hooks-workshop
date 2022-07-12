@@ -15,6 +15,7 @@ export const Exercise5 = () => {
       />
       Your text is:
       <pre>{text}</pre>
+      {/* @ts-ignore */}
       <Button onClick={() => input?.current.focus()}>
         Click here to focus the field above!
       </Button>
