@@ -4,15 +4,19 @@ import { Action } from "../02-complex-state-solution";
 
 const ADD = "ADD";
 const REMOVE = "REMOVE";
-const CHANGE = "CHANGE";
 
 type UpdatedState = {
   text: string;
   list: string[];
 };
 
+const CHANGE = "CHANGE";
+
 const onChangeReducer = (state: UpdatedState, { type, payload }: Action) => {
-  return state;
+  if (type === CHANGE) {
+    return { ...state, text: payload };
+  }
+  return { ...state };
 };
 
 const updateListReducer = (
@@ -20,17 +24,26 @@ const updateListReducer = (
   { type, payload }: Action
 ): // @ts-ignore
 UpdatedState => {
-  return state;
+  const { list } = state;
+  if (type === ADD) {
+    return { ...state, list: [...list, (payload as string)], text: "" };
+  } else if (type === REMOVE) {
+    const reduced = list.slice(0, -1);
+    return { ...state, list: reduced };
+  }
 };
 
-// combine the 2 reducers 
 const reducerHandler = (state: UpdatedState, action: Action): UpdatedState => {
-  return state;
+  console.log(action.type);
+  if (action.type === CHANGE) {
+    return onChangeReducer(state, action) as UpdatedState;
+  }
+  return updateListReducer(state, action);
 };
 
 export const Exercise3 = () => {
   const [{ text, list }, dispatch] = useReducer(reducerHandler, {
-    text: "",
+    text: "sktat",
     list: [],
   });
 
