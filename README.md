@@ -35,15 +35,9 @@ This exercise is a simple counter. Implement the counter using React Hooks.
 Now let's spice up a bit the things, what if you need to have multiple states? You could do it with multiple `useState`
 But there is another reducer that handles more effectively complex object states
 
-#### 3. useRef
+#### 3. useReducer-more
 
-If you don't know what are refs in react: https://reactjs.org/docs/refs-and-the-dom.html
-
-Basically refs provides a way to access dom nodes from your React code (not only dom nodes)
-
-Find a way to have a ref in a function component!
-
-The goal is that when you click on the button, you need to put the focus on the input field
+Create a list of words from the text provided in the input
 
 #### 4. useEffect 1
 
@@ -53,17 +47,19 @@ Try to modify the title of the tab when you type in the input field
 
 `hint: to change the title of the tab you can do: document.title = "Hackages coaching"`
 
-#### 5. useEffect 2
+#### 5. useRef
 
-useEffect can be used for any side effect!
+If you don't know what are refs in react: https://reactjs.org/docs/refs-and-the-dom.html
 
-Now the goal is to show on the page the number of seconds the user has spent on the page
+Basically refs provides a way to access dom nodes from your React code (not only dom nodes)
 
-`hint: you can create your own hook and use an interval`
+Find a way to have a ref in a function component!
+
+The goal is that when you click on the button, you need to put the focus on the input field
 
 #### 6. United Reducer
 
-Comment her 
+Create a reducer without type
 
 #### 7. useContext
 

@@ -23,7 +23,7 @@ UpdatedState => {
   return state;
 };
 
-// combine the 2 reducers 
+// combine the 2 reducers
 const reducerHandler = (state: UpdatedState, action: Action): UpdatedState => {
   return state;
 };
@@ -38,17 +38,13 @@ export const Exercise3 = () => {
     <Container>
       <InputArea
         value={text}
-        onChange={({ target: { value } }) =>
-          dispatch({ type: CHANGE, payload: value })
-        }
+        onChange={({ target: { value } }) => dispatch({})}
       />
       Your text is:
       <pre>{text}</pre>
       <div style={{ display: "flex" }}>
-        <Button onClick={() => dispatch({ type: ADD, payload: text })}>
-          +
-        </Button>
-        <Button onClick={() => dispatch({ type: REMOVE })}>-</Button>
+        <Button onClick={() => dispatch({})}>+</Button>
+        <Button onClick={() => dispatch({})}>-</Button>
       </div>
       <div>
         {list.map((el) => (
