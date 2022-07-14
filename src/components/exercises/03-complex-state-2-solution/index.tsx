@@ -1,23 +1,15 @@
 import { useReducer } from "react";
 import { Button, Container, InputArea } from "../../styles";
-import { Action } from "../02-complex-state-solution";
+import { Action, State, onChangeReducer } from "../02-complex-state-solution";
 
 const ADD = "ADD";
 const REMOVE = "REMOVE";
 
-type UpdatedState = {
-  text: string;
+type UpdatedState = State & {
   list: string[];
 };
 
 const CHANGE = "CHANGE";
-
-const onChangeReducer = (state: UpdatedState, { type, payload }: Action) => {
-  if (type === CHANGE) {
-    return { ...state, text: payload };
-  }
-  return { ...state };
-};
 
 const updateListReducer = (
   state: UpdatedState,
@@ -61,7 +53,7 @@ export const Exercise3 = () => {
         <Button onClick={() => dispatch({ type: ADD, payload: text })}>
           +
         </Button>
-        <Button onClick={() => dispatch({ type: REMOVE })}>-</Button>
+        <Button onClick={() => dispatch({ type: REMOVE, payload: '' })}>-</Button>
       </div>
       <div>
         {list.map((el) => (

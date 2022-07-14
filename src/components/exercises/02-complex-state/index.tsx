@@ -1,17 +1,12 @@
-import React, { useReducer, Reducer, Dispatch } from "react";
-import { Button, Container, InputArea, Label } from "../../styles";
+import React, { useReducer } from "react";
+import { Container, InputArea, Label } from "../../styles";
 
-const INCREMENT = "increment";
-const DECREMENT = "decrement";
-const INPUT = "INPUT";
+const CHANGE = "CHANGE";
 
 export const Exercise2 = () => {
 
   return (
     <Container>
-      <p>{'state.count'}</p>
-      <Button >+</Button>
-      <Button >-</Button>
       <Label>Text</Label>
       <InputArea
       />
